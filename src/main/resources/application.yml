@@ -1,0 +1,19 @@
+server:
+  port: 23456
+
+spring:
+  rabbitmq:
+    host: 192.168.1.243
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        retry:
+          max-attempts: 5
+          enabled: true
+          initial-interval: 5000
+        default-requeue-rejected: false
+logging:
+  level:
+    org: info
